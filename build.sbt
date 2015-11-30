@@ -40,7 +40,15 @@ logLevel in test := Level.Info
 
 // define the statements initially evaluated when entering 'console', 'console-quick', but not 'console-project'
 initialCommands in console := """
-                     |""".stripMargin
+                                |import com.amazonaws.services.elastictranscoder.AmazonElasticTranscoderClient
+                                |import com.amazonaws.services.elastictranscoder.model._
+                                |import com.amazonaws.services.elastictranscoder.samples.model.{JobStatusNotification, JobStatusNotificationHandler}
+                                |import com.amazonaws.services.elastictranscoder.samples.utils.{SqsQueueNotificationWorker, TranscoderSampleUtilities}
+                                |import com.amazonaws.services.sqs.AmazonSQSClient
+                                |import scala.collection.JavaConverters._
+                                |import scala.language.postfixOps
+                                |import com.micronautics.aws.JobStatusNotificationsSample._
+                                |""".stripMargin
 
 cancelable := true
 

@@ -5,10 +5,9 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public final class TranscoderSampleUtilities {
-
     private static final char[] HEX_ENCODING = new char[] { '0', '1', '2', '3', '4', '5', '6', '7',
                                                             '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
-    
+
     /**
      * Method converts a byte array into a hex string.
      * @param input
@@ -22,7 +21,7 @@ public final class TranscoderSampleUtilities {
         }
         return builder.toString();
     }
-    
+
     /**
      * Method converts an input key into an output key but computing
      * BASE16(SHA256(UTF-8(inputKey))).
