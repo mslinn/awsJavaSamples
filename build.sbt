@@ -26,7 +26,8 @@ libraryDependencies ++= Seq(
   "com.fasterxml.jackson.core" % "jackson-core"        % "2.6.3"   withSources(),
   "com.fasterxml.jackson.core" % "jackson-annotations" % "2.6.3"   withSources(),
   "com.fasterxml.jackson.core" % "jackson-databind"    % "2.6.3"   withSources(),
-  "com.amazonaws"              %  "aws-java-sdk-osgi"  % "1.10.35" withSources()
+  "com.amazonaws"              % "aws-java-sdk-osgi"   % "1.10.35" withSources(),
+  "ch.qos.logback"             % "logback-classic"     % "1.1.3"   withSources()
 )
 
 logLevel := Level.Warn
@@ -47,6 +48,7 @@ initialCommands in console := """
                                 |import com.amazonaws.services.sqs.AmazonSQSClient
                                 |import scala.collection.JavaConverters._
                                 |import scala.language.postfixOps
+                                |import com.micronautics.aws.Settings._
                                 |import com.micronautics.aws.JobStatusNotificationsSample._
                                 |""".stripMargin
 
