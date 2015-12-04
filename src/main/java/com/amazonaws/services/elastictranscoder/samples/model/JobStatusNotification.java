@@ -1,10 +1,10 @@
 package com.amazonaws.services.elastictranscoder.samples.model;
 
-import java.io.IOException;
-import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.IOException;
+import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown=true)
 public class JobStatusNotification {
@@ -23,7 +23,7 @@ public class JobStatusNotification {
 
         @Override
         public String toString() {
-            return "JobInput [key=" + key + "]";
+            return "JobInput [inKey=" + key + "]";
         }
     }
 
@@ -87,7 +87,7 @@ public class JobStatusNotification {
 
         @Override
         public String toString() {
-            return "JobOutput [id=" + id + ", presetId=" + presetId + ", key="
+            return "JobOutput [id=" + id + ", presetId=" + presetId + ", inKey="
                     + key + ", status=" + status + ", statusDetail="
                     + statusDetail + ", errorCode=" + errorCode + "]";
         }

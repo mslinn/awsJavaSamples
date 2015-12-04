@@ -37,13 +37,13 @@ public class JobStatusNotificationsSample {
     // http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/sample-code.html#java-sqs
     private static final String SQS_QUEUE_URL = "Enter your queue url here.";
 
-    // This is the name of the input key that you would like to transcode.
-    private static final String INPUT_KEY = "Enter your input key here.";
+    // This is the name of the input inKey that you would like to transcode.
+    private static final String INPUT_KEY = "Enter your input inKey here.";
 
     // This will generate a 480p 16:9 mp4 output.
     private static final String PRESET_ID = "1351620000001-000020";
 
-    // All outputs will have this prefix prepended to their output key.
+    // All outputs will have this prefix prepended to their output inKey.
     private static final String OUTPUT_KEY_PREFIX = "elastic-transcoder-samples/output/";
 
     // Clients are built using the default credentials provider chain.  This
@@ -70,16 +70,16 @@ public class JobStatusNotificationsSample {
 
     /**
      * Creates a job in Elastic Transcoder using the configured pipeline, input
-     * key, preset, and output key prefix.
+     * inKey, preset, and output inKey prefix.
      * @return Job ID of the job that was created in Elastic Transcoder.
      * @throws Exception
      */
     private static String createElasticTranscoderJob() throws Exception {
-        // Setup the job input using the provided input key.
+        // Setup the job input using the provided input inKey.
         JobInput input = new JobInput()
             .withKey(INPUT_KEY);
 
-        // Setup the job output using the provided input key to generate an output key.
+        // Setup the job output using the provided input inKey to generate an output inKey.
         List<CreateJobOutput> outputs = new ArrayList<CreateJobOutput>();
         CreateJobOutput output = new CreateJobOutput()
             .withKey(TranscoderSampleUtilities.inputKeyToOutputKey(INPUT_KEY))

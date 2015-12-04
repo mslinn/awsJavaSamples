@@ -19,15 +19,16 @@ scalacOptions in (Compile, doc) <++= baseDirectory.map {
 javacOptions ++= Seq("-Xlint:deprecation", "-Xlint:unchecked", "-source", "1.7", "-target", "1.7", "-g:vars")
 
 resolvers ++= Seq(
-  "Typesafe Releases"   at "http://repo.typesafe.com/typesafe/releases"
+  "micronautics/scala on bintray" at "http://dl.bintray.com/micronautics/scala",
+  "Typesafe Releases"             at "http://repo.typesafe.com/typesafe/releases"
 )
 
 libraryDependencies ++= Seq(
-  "com.fasterxml.jackson.core" % "jackson-core"        % "2.6.3"   withSources(),
-  "com.fasterxml.jackson.core" % "jackson-annotations" % "2.6.3"   withSources(),
-  "com.fasterxml.jackson.core" % "jackson-databind"    % "2.6.3"   withSources(),
-  "com.amazonaws"              % "aws-java-sdk-osgi"   % "1.10.35" withSources(),
-  "ch.qos.logback"             % "logback-classic"     % "1.1.3"   withSources()
+  "com.fasterxml.jackson.core" %  "jackson-core"        % "2.6.3"   withSources(),
+  "com.fasterxml.jackson.core" %  "jackson-annotations" % "2.6.3"   withSources(),
+  "com.fasterxml.jackson.core" %  "jackson-databind"    % "2.6.3"   withSources(),
+  "com.micronautics"           %% "awslib_scala"        % "1.1.4"   withSources(),
+  "ch.qos.logback"             %  "logback-classic"     % "1.1.3"   withSources()
 )
 
 logLevel := Level.Warn
@@ -53,5 +54,3 @@ initialCommands in console := """
                                 |""".stripMargin
 
 cancelable := true
-
-sublimeTransitive := true

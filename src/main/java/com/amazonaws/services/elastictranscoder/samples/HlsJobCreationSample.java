@@ -20,8 +20,8 @@ public class HlsJobCreationSample {
     // http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/sample-code.html#java-pipeline
     private static final String PIPELINE_ID = "Enter your pipeline id here.";
 
-    // This is the name of the input key that you would like to transcode.
-    private static final String INPUT_KEY = "Enter your input key here.";
+    // This is the name of the input inKey that you would like to transcode.
+    private static final String INPUT_KEY = "Enter your input inKey here.";
 
     // HLS Presets that will be used to create an adaptive bitrate playlist.
     private static final String HLS_64K_AUDIO_PRESET_ID = "1351620000001-200071";
@@ -34,7 +34,7 @@ public class HlsJobCreationSample {
     // HLS Segment duration that will be targeted.
     private static final String SEGMENT_DURATION = "2";
 
-    // All outputs will have this prefix prepended to their output key.
+    // All outputs will have this prefix prepended to their output inKey.
     private static final String OUTPUT_KEY_PREFIX = "elastic-transcoder-samples/output/hls/";
 
     // Clients are built using the default credentials provider chain.  This
@@ -55,7 +55,7 @@ public class HlsJobCreationSample {
      * @throws Exception
      */
     private static Job createElasticTranscoderHlsJob() throws Exception {
-        // Setup the job input using the provided input key.
+        // Setup the job input using the provided input inKey.
         JobInput input = new JobInput()
             .withKey(INPUT_KEY);
 

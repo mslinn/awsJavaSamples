@@ -23,10 +23,10 @@ public final class TranscoderSampleUtilities {
     }
 
     /**
-     * Method converts an input key into an output key but computing
+     * Method converts an input inKey into an output inKey but computing
      * BASE16(SHA256(UTF-8(inputKey))).
      * @param inputKey
-     * @return Output key generated from the input key.
+     * @return Output inKey generated from the input inKey.
      * @throws NoSuchAlgorithmException
      * @throws UnsupportedEncodingException
      */
