@@ -148,6 +148,7 @@ object poke extends App {
   } */
   println(prettyMsg)
 
+  // Got this from http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/notifications.html
   val msg2 = s"""{
                 |  "state" : "${JobState.COMPLETED}",
                 |  "errorCode" : "0",
